@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calorie Counter/Calculator</title>
+    <!-- Include Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100">
+    <div class="container mx-auto py-8 px-4">
+        <div class="mb-4">
+            <label for="counterType" class="block mb-2">Select Counter Type:</label>
+            <select id="counterType" class="w-full border rounded-md px-4 py-2">
+                <option value="calculator">Calorie Counter</option>
+                <option value="counter">Calorie Calculator</option>
+            </select>
+        </div>
+        <div id="counter" class="hidden">
+            <div>
+                <label for="age" class="block my-2">Age (years)</label>
+                <input type="number" id="age" class="w-full border rounded-md px-4 py-2" placeholder="Enter your age">
+            </div>
+            <div>
+                <label for="weight" class="block my-2">Weight (kg)</label>
+                <input type="number" id="weight" class="w-full border rounded-md px-4 py-2" placeholder="Enter your weight">
+            </div>
+            <div>
+                <label for="height" class="block my-2">Height (cm)</label>
+                <input type="number" id="height" class="w-full border rounded-md px-4 py-2" placeholder="Enter your height">
+            </div>
+            <div>
+                <label for="workoutDays" class="block my-2">Workout Days per Week</label>
+                <input type="number" id="workoutDays" class="w-full border rounded-md px-4 py-2" placeholder="Enter how many days you workout">
+            </div>
+            <div>
+                <label for="goal" class="block my-2">Goal (Calories)</label>
+                <select id="goal" class="w-full border rounded-md px-4 py-2">
+                    <option value="maintenance">Maintenance</option>
+                    <option value="gain">Weight Gain</option>
+                    <option value="lose">Weight Loss</option>
+                </select>
+            </div>
+            <div>
+                <label for="calories" class="block my-2">Calories</label>
+                <input type="text" id="calories" class="w-full border rounded-md px-4 py-2" readonly>
+                <img id="weightImage" src="" alt="Weight Image" class="mt-4 hidden">
+            </div>
+            <div>
+                <button id="calculate" class="bg-blue-500 hover:bg-blue-600 my-4 w-full text-white font-bold py-2 px-4 rounded">Calculate Calories</button>
+            </div>
+        </div>
+        <div id="calculator">
+            <div class="calculator-container bg-white shadow-md p-6 rounded-lg">
+                <h1 class="text-2xl font-semibold mb-6">Calorie Calculator</h1>
+                <div class="mb-4">
+                    <label for="foodInput" class="block mb-2">Enter Food:</label>
+                    <input type="text" id="foodInput" class="w-full border rounded-md px-4 py-2" placeholder="e.g., Apple, Chicken Breast, etc.">
+                </div>
+                <div class="mb-4">
+                    <label for="gramsInput" class="block mb-2">Enter Grams:</label>
+                    <input type="number" id="gramsInput" class="w-full border rounded-md px-4 py-2" min="1" value="100">
+                </div>
+                <button id="searchButton" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 w-full px-4 rounded">Search</button>
+                <div id="results" class="mt-4"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Include Tailwind CSS for responsive styles -->
+    <script src="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.js"></script>
+    <script src="calCounter.js"></script>
+</body>
+
+</html>
